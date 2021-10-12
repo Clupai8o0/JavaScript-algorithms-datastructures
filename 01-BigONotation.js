@@ -21,3 +21,9 @@ function logUpTo(n) {
 // log2(8) = 3 | reverse exponentials
 // log2(value) = exponent 
 // neeeded for searhing, sorting, recursion
+
+// O(n**2)
+// O(n log n)
+// O(n)
+// O(log n)
+// O(1)
