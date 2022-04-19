@@ -23,9 +23,8 @@ console.log(
 
 //* ES2015 Version
 function bubbleSort2015(arr = []) {
-	const swap = (arr = [], idx1 = 0, idx2 = 0) => {
-		[arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
-	};
+	const swap = (arr = [], idx1 = 0, idx2 = 0) =>
+		([arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]);
 
 	for (let i = arr.length; i > 0; i--) {
 		for (let j = 0; j < i - 1; j++) {

@@ -44,6 +44,50 @@ function compareByLen(str1, str2) {
 ["ab", "abcd", "a", "abcde"].sort(compareByLen);
 ```
 
-# Bubble Sort
+# Sorting Algorithms
 
-A sorting algorithm where the largest values bubble at the end.
+## Bubble Sort
+
+A sorting algorithm where the largest values bubble at the end. It's time complexity is **O(n^2)**.
+
+```js
+function bubbleSort(arr = []) {
+	const swap = (arr = [], idx1 = 0, idx2 = 0) =>
+		([arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]);
+
+	for (let i = arr.length; i > 0; i--) {
+		for (let j = 0; j < i - 1; j++) {
+			swap(arr, j, j + 1);
+		}
+	}
+
+	return arr;
+}
+```
+
+### Selection Sort
+
+Similar to bubble sort, but instead of first placing large values into sorted position, it place small values into sorted position. The minimum value is placed into the first position. It's time complexity is **O(n^2)**
+
+```js
+function selectionSort(arr = []) {
+	const swap = (arr = [], idx1 = 1, idx2 = 2) =>
+		([arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]);
+
+	for (let i = 0; i < arr.length; i++) {
+		let lowest = i;
+		for (let j = i + 1; j < arr.length; j++) {
+			if (arr[lowest] > arr[j]) lowest = j;
+		}
+
+		if (i !== lowest) {
+			swap(arr, i, lowest);
+		}
+	}
+
+	return arr;
+}
+```
+
+Only worth it if you wish to reduce the number of swaps in comparison to bubble sort.
+
