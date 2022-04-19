@@ -91,3 +91,21 @@ function selectionSort(arr = []) {
 
 Only worth it if you wish to reduce the number of swaps in comparison to bubble sort.
 
+### Insertion Sort
+
+Builds up the sort by gradually creating a larger left half which is always sorted. It's time complexity is **O(n^2)**.
+
+```js
+function insertionSort(arr = []) {
+	for (let i = 1; i < arr.length; i++) {
+		let currentVal = arr[i];
+
+		for (let j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
+			arr[j + 1] = arr[j];
+			arr[j] = currentVal;
+		}
+	}
+
+	return arr;
+}
+```
