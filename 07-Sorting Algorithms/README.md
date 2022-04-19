@@ -93,7 +93,7 @@ Only worth it if you wish to reduce the number of swaps in comparison to bubble 
 
 ### Insertion Sort
 
-Builds up the sort by gradually creating a larger left half which is always sorted. It's time complexity is **O(n^2)**.
+Builds up the sort by gradually creating a larger left half which is always sorted. It's time complexity is **O(n^2)**. Can work great for on the spot updates, when data is coming live.
 
 ```js
 function insertionSort(arr = []) {
