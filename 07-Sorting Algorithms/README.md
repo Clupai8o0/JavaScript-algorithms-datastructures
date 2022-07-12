@@ -46,6 +46,8 @@ function compareByLen(str1, str2) {
 
 # Sorting Algorithms
 
+[Visual of Sort Algorithms](https://visualgo.net/en/sorting)
+
 ## Bubble Sort
 
 A sorting algorithm where the largest values bubble at the end. It's time complexity is **O(n^2)**.
@@ -65,7 +67,7 @@ function bubbleSort(arr = []) {
 }
 ```
 
-### Selection Sort
+## Selection Sort
 
 Similar to bubble sort, but instead of first placing large values into sorted position, it place small values into sorted position. The minimum value is placed into the first position. It's time complexity is **O(n^2)**
 
@@ -91,7 +93,7 @@ function selectionSort(arr = []) {
 
 Only worth it if you wish to reduce the number of swaps in comparison to bubble sort.
 
-### Insertion Sort
+## Insertion Sort
 
 Builds up the sort by gradually creating a larger left half which is always sorted. It's time complexity is **O(n^2)**. Can work great for on the spot updates, when data is coming live.
 
@@ -109,3 +111,53 @@ function insertionSort(arr = []) {
 	return arr;
 }
 ```
+
+## Merge Sort
+
+It's a combination of 2 things - merging & sorting. It exploits the fact that arrays of 0 or 1 elements are always sorted. Works by decomposing an array into smaller arrays of 0 or 1 elements, then building up a newly sorted array.
+
+```js
+function merge(arr1 = [], arr2 = []) {
+	let results = [];
+	let i = 0,
+		j = 0;
+
+	while (i < arr1.length && j < arr2.length) {
+		if (arr2[j] > arr1[i]) {
+			results.push(arr1[i]);
+			i++;
+		} else {
+			results.push(arr2[j]);
+			j++;
+		}
+	}
+
+	while (i < arr1.length) {
+		results.push(arr1[i]);
+		i++;
+	}
+	while (j < arr2.length) {
+		results.push(arr2[j]);
+		j++;
+	}
+
+	return results;
+}
+
+function mergeSort(arr = []) {
+	if (arr.length <= 1) return arr;
+	const mid = Math.floor(arr.length / 2);
+	const left = mergeSort(arr.slice(0, mid));
+	const right = mergeSort(arr.slice(mid));
+	return merge(left, right);
+}
+```
+
+# Comparison
+
+| Algorithm      | Time Complexity (Best) | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity |
+| -------------- | ---------------------- | ------------------------- | ----------------------- | ---------------- |
+| Bubble Sort    | O(n)                   | O(n^2)                    | O(n^2)                  | O(1)             |
+| Insertion Sort | O(n)                   | O(n^2)                    | O(n^2)                  | O(1)             |
+| Selection Sort | O(n^2)                 | O(n^2)                    | O(n^2)                  | O(1)             |
+| Merge Sort     | O(n log n)             | O(n log n)                | O(n log n)              | O(n)             |
