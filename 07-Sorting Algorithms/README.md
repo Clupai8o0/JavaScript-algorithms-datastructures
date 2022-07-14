@@ -153,6 +153,83 @@ function mergeSort(arr = []) {
 }
 ```
 
+## Quick Sort
+
+Works by selected one element (pivot) and finding the index where the pivot should end up in the sorted array. Once the pivot is positioned appropriately, quick sort can be applied on either side of the pivot.
+
+```js
+function pivot(arr, start = 0, end = arr.length + 1) {
+	const swap = (arr, i1, i2) => {
+		[arr[i1], arr[i2]] = [arr[i2], arr[i1]];
+	};
+
+	var pivot = arr[start];
+	var swapIdx = start;
+
+	for (let i = start + 1; i < arr.length; i++) {
+		if (pivot > arr[i]) {
+			swapIdx++;
+			swap(arr, swapIdx, i);
+		}
+	}
+
+	swap(arr, start, swapIdx);
+	return swapIdx;
+}
+
+function quickSort(arr = [], left = 0, right = arr.length - 1) {
+	if (left < right) {
+		let pivotIndex = pivot(arr, left, right);
+
+		// left
+		quickSort(arr, left, pivotIndex - 1);
+		// right
+		quickSort(arr, pivotIndex + 1, right);
+	}
+
+	return arr;
+}
+```
+
+## Radix Sort
+
+A special sorting algorithm that works on a list of numbers. It never makes comparisons between elements. It exploits the fact that information about the size of a number is encoded in the number of digits
+
+```js
+const = getDigit(num, i) =>
+	Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
+
+const = digitCount(num) => {
+  if (num === 0) return 1;
+  return Math.floor(Math.log10(Math.abs(num))) + 1;
+}
+const = mostDigits(nums=[]) => {
+  let maxDigits = 0;
+  for (let i = 0; i < nums.length; i++) {
+    maxDigits = Math.max(maxDigits, digitCount(nums[i]));
+  }
+
+  return maxDigits
+}
+
+function radixSort(nums) {
+  let maxDigits = mostDigits(nums);
+  for (let k = 0; k < maxDigits; k++) {
+    let digitBuckets = Array.from({ length: 10 }, () => [])
+    for (let i = 0; i < nums.length; i++) {
+      let digit = getDigit(nums[i], k);
+      digitBuckets[digit].push(nums[i]);
+    }
+
+    nums = [].concat(...digitBuckets);
+  }
+
+  return nums;
+}
+
+console.log(radixSort([23, 1324,6,2331,6,41,234,2,21,56,14613]))
+```
+
 # Comparison
 
 | Algorithm      | Time Complexity (Best) | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity |
@@ -161,3 +238,5 @@ function mergeSort(arr = []) {
 | Insertion Sort | O(n)                   | O(n^2)                    | O(n^2)                  | O(1)             |
 | Selection Sort | O(n^2)                 | O(n^2)                    | O(n^2)                  | O(1)             |
 | Merge Sort     | O(n log n)             | O(n log n)                | O(n log n)              | O(n)             |
+| Quick Sort     | O(n log n)             | O(n log n)                | O(n^2)                  | O(log n)         |
+| Radix Sort     | O(nk)                  | O(nk)                     | O(nk)                   | O(n + k)         |
