@@ -227,8 +227,7 @@ function radixSort(nums) {
   return nums;
 }
 ```
-
-# Comparison
+c# Comparison
 
 | Algorithm      | Time Complexity (Best) | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity |
 | -------------- | ---------------------- | ------------------------- | ----------------------- | ---------------- |
