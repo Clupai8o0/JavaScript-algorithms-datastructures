@@ -226,8 +226,6 @@ function radixSort(nums) {
 
   return nums;
 }
-
-console.log(radixSort([23, 1324,6,2331,6,41,234,2,21,56,14613]))
 ```
 
 # Comparison
