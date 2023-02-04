@@ -152,6 +152,21 @@ class DoublyLinkedList {
 
 		return current;
 	}
+
+	//* Set
+	// Replacing the value of a node
+	// -> Create a variable which is the result of the get method at the index passed
+	// -> -> If the get method returns a valid node, set value of that node to be the value passed
+	// -> -> Return true
+	// -> Otherwise return false
+	set(index, val) {
+		const foundNode = this.get(index);
+		if (foundNode != null) {
+			foundNode.val = val;
+			return true;
+		} 
+		return false
+	}
 }
 
 const list = new DoublyLinkedList();
@@ -165,3 +180,5 @@ console.log(list.push(6));
 console.log(list.shift());
 console.log(list.unshift(1));
 console.log(list.get(3));
+console.log(list.set(0, 2))
+console.log(list)
