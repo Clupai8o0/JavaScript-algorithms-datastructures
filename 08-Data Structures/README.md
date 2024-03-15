@@ -28,6 +28,9 @@ A single linked list as an alternate to arrays when insertion and deletion at th
 
 It is almost identical to singly linked lists, except every node has another pointer, to the previous node.
 
-| Insertion | Removal      | Searching | Access |
-| --------- | ------------ | --------- | ------ |
-| O(1)      | O(1) or O(n) | O(n)      | O(n)   |
+## Big O
+
+| Type               | Insertion | Removal      | Searching | Access |
+| ------------------ | --------- | ------------ | --------- | ------ |
+| Singly Linked List | O(1)      | O(1) or O(n) | O(n)      | O(n)   |
+| Doubly Linked List | O(1)      | O(1) or O(n) | O(n)      | O(n)   |
