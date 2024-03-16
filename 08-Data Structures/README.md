@@ -28,9 +28,18 @@ A single linked list as an alternate to arrays when insertion and deletion at th
 
 It is almost identical to singly linked lists, except every node has another pointer, to the previous node.
 
-## Big O
+# Stacks
+
+Abstract data structure. A collection of data that follows LIFO (Last In First Out) where the last element is added to the stack will be the first element removed from the stack.
+
+- Used to manage function invocation
+- Used for Undo / Redo
+- Used for routing (history object)
+
+# Big O
 
 | Type               | Insertion | Removal      | Searching | Access |
 | ------------------ | --------- | ------------ | --------- | ------ |
 | Singly Linked List | O(1)      | O(1) or O(n) | O(n)      | O(n)   |
 | Doubly Linked List | O(1)      | O(1) or O(n) | O(n)      | O(n)   |
+| Stack              | O(1)      | O(1)         | O(n)      | O(n)   |
