@@ -36,6 +36,33 @@ Abstract data structure. A collection of data that follows LIFO (Last In First O
 - Used for Undo / Redo
 - Used for routing (history object)
 
+# Queues
+
+Similar to Stack, but it follows FIFO (First In First Out). The first piece of data in a queue is the first one out.
+
+- Used in background tasks
+- Uploading resources
+- Printing / Task processing
+
+# Trees
+
+A data structures that consists of nodes in a parent / child relationship that are expanding as the branches of a tree. Trees are nonlinear while lists are linear (A singly linked list can be considered a special case of tree). And a parent node can only point at the child and no other node. And there must only be one entry point (root)
+
+- Root - The top node in a tree
+- Child - A node directly connected to another node when moving away from the root
+- Parent - The converse notion of a child
+- Siblings - A group of nodes with the same parent
+- Leaf - A node with no children
+- Edge - The connection between one node and another
+
+Uses:
+
+- HTML DOM
+- Network routing
+- Abstract syntax tree
+- Artificial intelligence
+- Folders in operating system
+
 # Big O
 
 | Type               | Insertion | Removal      | Searching | Access |
@@ -43,3 +70,4 @@ Abstract data structure. A collection of data that follows LIFO (Last In First O
 | Singly Linked List | O(1)      | O(1) or O(n) | O(n)      | O(n)   |
 | Doubly Linked List | O(1)      | O(1) or O(n) | O(n)      | O(n)   |
 | Stack              | O(1)      | O(1)         | O(n)      | O(n)   |
+| Queue              | O(1)      | O(1)         | O(n)      | O(n)   |
