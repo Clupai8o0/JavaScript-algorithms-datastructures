@@ -63,6 +63,12 @@ Uses:
 - Artificial intelligence
 - Folders in operating system
 
+## Binary Search Trees
+
+- Every node has at most two children
+- Every node to the left of the parent has value less than the parent
+- Every node to the right of the parent has value greater than the parent
+
 # Big O
 
 | Type               | Insertion | Removal      | Searching | Access |

@@ -1,8 +1,8 @@
 # Objects
 - Insertion - O(1)
-- Removal - O(1)
+- Removal   - O(1)
 - Searching - O(N)
-- Access - O(1)
+- Access    - O(1)
 
 # Arrays
 - Insertion - depends ***(If push(Then it is )(1) but if you add from start(Its O(N) As it has to be done for every element))***
