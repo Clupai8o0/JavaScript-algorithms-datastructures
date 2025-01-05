@@ -183,3 +183,4 @@ A data structure where each element has a priority. Elements with higher priorit
 | Stack              | O(1)      | O(1)         | O(n)      | O(n)   |
 | Queue              | O(1)      | O(1)         | O(n)      | O(n)   |
 | BST                | O(log n)  | O(log n)     | O(n)      | O(n)   |
+| Binary Heap        | O(log n)  | O(log n)     | O(n)      | O(n)   |
