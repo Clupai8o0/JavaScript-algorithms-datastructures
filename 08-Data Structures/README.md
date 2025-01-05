@@ -158,8 +158,8 @@ What if we have a child node and we want to find its parent? For any child node 
 - Pop from the values property, so you can return the value at the end
 - Have the new root "sink down" to the correct spot
   - Your parent index starts at 0 (the root)
-  - Find the index of the left child: 2 * index + 1 (make sure it is not out of bounds)
-  - Find the index of the right child: 2 * index + 2 (make sure it is not out of bounds)
+  - Find the index of the left child: 2 \* index + 1 (make sure it is not out of bounds)
+  - Find the index of the right child: 2 \* index + 2 (make sure it is not out of bounds)
   - If the left or right child is greater than the element, swap. If both left and right children are larger, swap with the largest child
   - The child index you swapped to now becomes the new parent index
   - Keep looping and swapping until neither child is larger than the element
@@ -174,6 +174,57 @@ A data structure where each element has a priority. Elements with higher priorit
 - Enqueue method accepts a value and priority, makes a new node, and puts it in the right spot based off of its priority
 - Dequeue method removes root element, returns it, and rearranges heap using priority
 
+# Hash Tables
+
+- Hash tables are used to store key-value pairs
+- They are like arrays, but the keys are not ordered
+- Unlike arrays, hash tables are fast for all of the following operations: finding values, adding new values, and removing values
+
+## Hash Functions
+
+- A function that converts a key into an index in an array
+- Hash functions need to be deterministic (same input yields same output), distribute uniformly, and be fast
+
+### Collisions
+
+- A collision occurs when a hash function returns the same index for two different keys
+- There are many strategies for dealing with collisions, but we will focus on two: separate chaining and linear probing
+
+#### Separate Chaining
+
+- With separate chaining, at each index in our array we store values using a more sophisticated data structure (e.g. an array or a linked list)
+- This allows us to store multiple key-value pairs at the same index
+
+#### Linear Probing
+
+- With linear probing, when we find a collision, we search through the array to find the next empty slot
+- Unlike with separate chaining, this allows us to store a single key-value at each index
+
+## Set / Get
+
+### Set
+
+- Accepts a key and a value
+- Hashes the key
+- Stores the key-value pair in the hash table array via separate chaining
+
+### Get
+
+- Accepts a key
+- Hashes the key
+- Retrieves the key-value pair in the hash table
+- If the key isn't found, returns undefined
+
+## Keys / Values
+
+### Keys
+
+- Loops through the hash table array and returns an array of keys in the table
+
+### Values
+
+- Loops through the hash table array and returns an array of values in the table
+
 # Big O
 
 | Type               | Insertion | Removal      | Searching | Access |
@@ -184,3 +235,4 @@ A data structure where each element has a priority. Elements with higher priorit
 | Queue              | O(1)      | O(1)         | O(n)      | O(n)   |
 | BST                | O(log n)  | O(log n)     | O(n)      | O(n)   |
 | Binary Heap        | O(log n)  | O(log n)     | O(n)      | O(n)   |
+| Hash Table         | O(1)      | O(1)         | O(1)      | O(1)   |
