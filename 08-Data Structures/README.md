@@ -276,46 +276,49 @@ A collection of nodes and connections between those nodes. A graph data structur
 - Slower to iterate over all edges with an adjacency matrix
 - Faster to lookup specific edge with an adjacency matrix
 
-## Adding a Vertex
+## Functions
+
+### Adding a Vertex
 
 - Write a method called `addVertex`, which accepts a name of a vertex
 - It should add a key to the adjacency list with the name of the vertex and set its value to be an empty array
 
-## Adding an Edge
+### Adding an Edge
 
 - This function should accept two vertices, we can call them `vertex1` and `vertex2`
 - The function should find in the adjacency list the key of `vertex1` and push `vertex2` to the array
 - The function should find in the adjacency list the key of `vertex2` and push `vertex1` to the array
 
-## Removing an Edge
+### Removing an Edge
 
 - This function should accept two vertices, we'll call them `vertex1` and `vertex2`
 - The function should reassign the key of `vertex1` to be an array that does not contain `vertex2`
 - The function should reassign the key of `vertex2` to be an array that does not contain `vertex1`
 
-## Removing a Vertex
+### Removing a Vertex
 
 - The function should accept a vertex to remove
 - The function should loop as long as there are any other vertices in the adjacency list for that vertex
 - Inside of the loop, call our `removeEdge` function with the vertex we are removing and any values in the adjacency list for that vertex
 
-# Graph Traversal
+## Graph Traversal
 
-## Depth First Traversal
+### Depth First Traversal
+
+#### Recursive
 
 - The function should accept a starting node
 - Create a list to store the end result, to be returned at the very end
 - Create an object to store visited vertices
-
-### Recursive
-
 - Create a helper function which accepts a vertex
   - The helper function should return early if the vertex is empty
   - The helper function should place the vertex it accepts into the visited object and push that vertex into the result array
   - Loop over all of the values in the adjacencyList for that vertex
   - If any of those values have not been visited, recursively invoke the helper function with that vertex
+- Invoke the helper function with the starting vertex
+- Return the result array
 
-### Iterative
+#### Iterative
 
 - The function should accept a starting node
 - Create a stack to help use keep track of vertices (use a list/array)
@@ -328,8 +331,9 @@ A collection of nodes and connections between those nodes. A graph data structur
     - Mark it as visited
     - Add it to the result list
     - Push all of its neighbors into the stack
+- Return the result array
 
-## Breadth First Traversal
+### Breadth First Traversal
 
 - The function should accept a starting node
 - Create a queue (you can use an array) and place the starting vertex in it
@@ -340,6 +344,7 @@ A collection of nodes and connections between those nodes. A graph data structur
   - Remove the first vertex from the queue and push it into the array that stores nodes visited
   - Loop over each vertex in the adjacency list for the vertex you are visiting
   - If it is not inside the object that stores nodes visited, mark it as visited and enqueue that vertex
+- Return the array of visited nodes
 
 # Big O
 
@@ -352,3 +357,4 @@ A collection of nodes and connections between those nodes. A graph data structur
 | BST                | O(log n)  | O(log n)     | O(n)      | O(n)   |
 | Binary Heap        | O(log n)  | O(log n)     | O(n)      | O(n)   |
 | Hash Table         | O(1)      | O(1)         | O(1)      | O(1)   |
+
